@@ -1,151 +1,207 @@
-package application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class LinkedList {
 	private int size;
 	private Node back;
 	private Node front;
-	
-	LinkedList(){
+
+	LinkedList() {
 		front = back = null;
 		size = 0;
 	}
-	
-	void addFirst(Node n){
-		if(back == null)
-			back= front = n;
-		else{
-		n.setNext(front);
-		front.setPrev(n);
-		front = n;
+
+	void addFirst(Node n) {
+		if (back == null)
+			back = front = n;
+		else {
+			n.next = front;
+			front = n;
 		}
 		size++;
 	}
-	void add(int n, Node node){
-		if(n == 0)
+
+	void add(int n, Node node) {
+		if (n == 0)
 			addFirst(node);
-		else if(n >= size)
+		else if (n >= size)
 			addLast(node);
-		else{
+		else {
 			Node current = front;
-			for(int i = 0; i < n-1; i++)
-				current = current.getNext();
-			node.setNext(current.getNext());
-			node.setPrev(current);
-			current.setNext(node);
+			for (int i = 0; i < n - 1; i++)
+				current = current.next;
+			node.next = current.next;
+			current.next = node;
 			size++;
 		}
 	}
+
 	void addSorted(Node node) {
-	    if (size == 0) {
-	        addFirst(node);
-	        return;
-	    }
-	    
-	    boolean isFound = false;
-	    Node current = front;
-	    for (int i = 0; i < size; i++) {
-	        if (node.compareTo(current.getData()) <= 0) {
-	            add(i, node);
-	            isFound = true;
-	            break;
-	        }
-	        current = current.getNext();
-	    }
-	    
-	    if (!isFound)
-	        addLast(node);
+		if (size == 0) {
+			addFirst(node);
+			return;
+		}
+		boolean isFound = false;
+		Node current = front;
+		for (int i = 0; i < size; i++) {
+			if (((Martyr)node.data).getAge() < ((Martyr)current.data).getAge()) {
+				add(i, node);
+				isFound = true;
+				break;
+			}
+			current = current.next;
+		}
+
+		if (!isFound)
+			addLast(node);
 	}
 
-	void addLast(Node node){
-		if(front == null)
+	void addLast(Node node) {
+		if (front == null)
 			front = back = node;
-		else{
-			back.setNext(node);
-			node.setPrev(back);
+		else {
+			back.next = node;
 			back = node;
 		}
 		size++;
 	}
-	
-	boolean removeFirst(){
-		if(size == 0)
+
+	boolean removeFirst() {
+		if (size == 0)
 			return false;
-		else if(size == 1)
+		else if (size == 1)
 			front = back = null;
-		else{
-			front = front.getNext();
-			front.setPrev(null);
+		else {
+			front = front.next;
 		}
 		size--;
 		return true;
 	}
 
-	boolean remove(int n){
-		if(size == 0)
+	boolean remove(int n) {
+		if (size == 0)
 			return false;
-		else if(n == 0)
+		else if (n == 0)
 			return removeFirst();
-		else if(n == size - 1)
+		else if (n == size - 1)
 			return removeLast();
-		else if(n < size - 1 && size > 0){
+		else if (n < size - 1 && size > 0) {
 			Node current = front;
-			for(int i = 0; i < n; i++)
-				current = current.getNext();
-			current.getPrev().setNext(current.getNext());
-			current.getNext().setPrev(current.getPrev());
+			for (int i = 0; i < n - 1; i++)
+				current = current.next;
+			current.next = current.next.next;
 			size--;
 			return true;
 		}
 		return false;
 	}
-	boolean removeLast(){
-        if(size == 0)
-            return false;
-        else if(size == 1) {
-            front = back = null;
-        } else {
-            back = back.getPrev();
-            back.setNext(null);
-        }
-        size--;
-        return true;
-    }
-	
-	Object getFirst(){
-		if(size == 0)
-			return null;
-		return front.getData();
-	}
-	Object get(int index){
-		if(size == 0)
-			return null;
-		else if(index == 1)
-			return getFirst();
-		else if(index == size-1)
-			return getLast();
-		else if (index < size-1 && size > 0){
+
+	boolean removeLast() {
+		if (size == 0)
+			return false;
+		else if (size == 1) {
+			front = back = null;
+		} else {
 			Node current = front;
-			for(int i = 0;i < index;i++)
-				current = current.getNext();
-			return current.getData();
+			while (current.next != back) {
+				current = current.next;
+			}
+			current.next = null;
+			back = current;
 		}
-		else return null;
+		size--;
+		return true;
 	}
-	Object getLast(){
-		if(size == 0)
+
+	Object getFirst() {
+		if (size == 0)
 			return null;
-		return back.getData();
+		return front.data;
 	}
-	
-	int size(){
+
+	Object get(int index) {
+		if (size == 0)
+			return null;
+		else if (index == 1)
+			return getFirst();
+		else if (index == size - 1)
+			return getLast();
+		else if (index < size - 1 && size > 0) {
+			Node current = front;
+			for (int i = 0; i < index; i++)
+				current = current.next;
+			return current.data;
+		} else
+			return null;
+	}
+
+	Object getLast() {
+		if (size == 0)
+			return null;
+		return back.data;
+	}
+
+	int size() {
 		return size;
 	}
-	
-	void print(){
+
+	public ObservableList<Martyr> getList() {
+		ObservableList<Martyr> result = FXCollections.observableArrayList();
 		Node current = front;
-		for(int i = 0;i < size;i++){
-			System.out.println(current.getData());
-			current = current.getNext();
+		while (current != null) {
+			result.add((Martyr) current.data);
+			current = current.next;
 		}
+		return result;
+	}
+
+	public ObservableList<Martyr> searchByPart(String PartName) {
+		ObservableList<Martyr> result = FXCollections.observableArrayList();
+
+		Node current = front;
+		while (current != null) {
+			if (((Martyr) current.data).getName().contains(PartName)) {
+				result.add((Martyr) current.data);
+			}
+			current = current.next;
+		}
+		return result;
+	}
+
+	public Martyr searchMartyr(String name) {
+		Node current = front;
+		while (current != null) {
+			if (((Martyr) current.data).getName().equalsIgnoreCase(name)) {
+				return (Martyr) current.data;
+			}
+			current = current.next;
+		}
+		return null;
+	}
+	public int indexOf(String name) {
+		Node current = front;
+		int index = 0;
+	
+		while (current != null) {
+			if (((Martyr) current.data).getName().equalsIgnoreCase(name)) {
+				return index;
+			}
+			current = current.next;
+			index++;
+		}
+		
+		return -1; 
+	}
+	public boolean exist(String name){
+		return searchMartyr(name) != null;
+	}
+
+	public void print_list() {
+		Node current = front;
+		while (current != null) {
+			System.out.println("\t\t\t"+current.data.toString());
+			current = current.next;
+		}
+		
 	}
 }
