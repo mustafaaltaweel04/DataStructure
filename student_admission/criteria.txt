@@ -1,0 +1,10 @@
+Major,Acceptance Grade,Tawjihi Weight,Placement Test Weight
+Business Administration,82.0,0.65,0.35
+Computer Science,85.0,0.7,0.3
+Cybersecurity,80.0,0.7,0.3
+Embedded Systems,85.0,0.5,0.5
+Engineering,90.0,0.6,0.4
+Environmental Science,75.0,0.5,0.5
+Information Technology,78.0,0.6,0.4
+Medicine,97.0,0.8,0.2
+Nursing,85.0,0.75,0.25

@@ -1,0 +1,7 @@
+Student ID,Name,Tawjihi Grade,Placement Test Grade,Chosen Major
+1001,John Doe,88.0,82.0,Business Administration
+1002,Jane Smith,92.0,85.0,Computer Science
+1005,Amy Orton,94.0,85.0,Cybersecurity
+1006,Sandy John,92.0,90.0,Embedded Systems
+1004,Bob Johnson,85.0,90.0,Embedded Systems
+1007,Carol White,94.0,85.0,Engineering
