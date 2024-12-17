@@ -1,0 +1,21 @@
+Passenger Id, Passenger name, Flight Id, Status:
+1,Alice,101,V
+2,Bob,101,R
+3,Charlie,102,V
+4,Dave,102,V
+5,Eve,103,V 
+6,Frank,103,R
+7,Grace,104,V
+8,Hank,104,R
+9,Ivy,105,V
+10,Jack,105,R
+12,Liam,106,R
+13,Mia,107,V
+14,Noah,107,R
+15,Olivia,101,V
+16,Paul,107,V
+17,Quinn,103,V
+18,Ruby,104,V
+19,Sara,101,R
+20,Mustafa,101,R
+21,Musab,109,R

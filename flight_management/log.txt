@@ -1,0 +1,11 @@
+2024-12-13T21:50:36.644651300 | Check-IN | Kate | 104 | Check-IN Kate Flight 104
+2024-12-13T21:50:56.315557300 | Board | Kate | 104 | Board Kate Flight 104
+2024-12-14T17:07:57.070242600 | Check-IN | Alice | 101 | Check-IN Alice Flight 101
+2024-12-14T17:08:12.749649900 | Board | Alice | 101 | Board Alice Flight 101
+2024-12-14T17:08:34.000675400 | Cancel | Alice | 101 | Cancel Alice Flight 101
+2024-12-14T17:08:44.308607900 | Undo Cancel | Alice | 101 | Undo Cancel Alice Flight 101
+2024-12-14T17:08:57.815668600 | Undo Board | Alice | 101 | Undo Board Alice Flight 101
+2024-12-17T10:27:25.833760500 | Check-IN | Ali | 110 | Check-IN Ali Flight 110
+2024-12-17T10:35:47.925175400 | Board | Ali | 110 | Board Ali Flight 110
+2024-12-17T10:36:37.761345700 | Cancel | Ali | 110 | Cancel Ali Flight 110
+2024-12-17T10:37:15.557524 | Undo Cancel | Ali | 110 | Undo Cancel Ali Flight 110

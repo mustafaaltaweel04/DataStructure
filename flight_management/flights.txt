@@ -1,0 +1,12 @@
+Flight ID, Destination, Status:
+101,New York,A
+102,California,I
+103,Arizona,A
+104,Miami,A
+105,Chicago,A
+106,Ohio,I
+107,Milwakee,A
+108,Queens,A
+109,Los Angelos,I
+110,Ramallah,A
+111,Ramallah,A
