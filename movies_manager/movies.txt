@@ -1,0 +1,55 @@
+Title: Brook And Jubal
+Description: Radio Show Second Date Update
+Date: 2016
+Rate: 8.7
+
+Title: Inception
+Description: A mind-bending thriller where a thief enters dreams to steal secrets.
+Date: 2010
+Rate: 8.8
+
+Title: Interstellar
+Description: A journey through space to save humanity.
+Date: 2014
+Rate: 8.6
+
+Title: The Matrix
+Description: A hacker discovers the truth about reality and his role in it.
+Date: 1999
+Rate: 8.7
+
+Title: The Dark Knight
+Description: A vigilante fights a chaotic criminal mastermind in Gotham City.
+Date: 2008
+Rate: 9.0
+
+Title: The Godfather
+Description: The saga of a powerful mafia family in America.
+Date: 1972
+Rate: 9.2
+
+Title: Sky
+Description: So Nice to know you i will be moving on
+Date: 2024
+Rate: 8.5
+
+Title: Parasite
+Description: A gripping tale of class disparity and unexpected connections.
+Date: 2019
+Rate: 8.6
+
+Title: Gladiator
+Description: A Roman general seeks revenge after betrayal.
+Date: 2000
+Rate: 8.5
+
+Title: Toy Story
+Description: Toys come to life in a delightful story of friendship and adventure.
+Date: 1995
+Rate: 8.3
+
+Title: Forrest Gump
+Description: A man with a simple mind and a big heart experiences extraordinary events.
+Date: 1994
+Rate: 8.8
+
